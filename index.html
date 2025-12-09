@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Калькулятор санкций</title>
+
+    <!-- Нормалайз и шрифты (опционально) -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="modal-bg" role="dialog" aria-modal="true" aria-labelledby="title">
+        <div class="modal">
+            <h2 id="title">КАЛЬКУЛЯТОР САНКЦИЙ</h2>
+
+            <label for="basePrice">Базовая цена</label>
+            <input id="basePrice" type="number" min="0" step="1" inputmode="numeric" placeholder="Введите сумму" />
+
+            <label for="daysWithout">Количество дней без оплаты</label>
+            <input id="daysWithout" type="number" min="0" step="1" inputmode="numeric" placeholder="0" />
+
+            <div class="checkbox-grid" id="checkboxGrid" aria-label="Список нарушений">
+                <!-- 11 чекбоксов -->
+                <label class="cb">
+                    <input type="checkbox" id="smoking" />
+                    Курение
+                </label>
+                <label class="cb">
+                    <input type="checkbox" id="nightNoise" />
+                    Нарушение покоя
+                </label>
+                <label class="cb">
+                    <input type="checkbox" id="drinking" />
+                    Распитие
+                </label>
+
+                <label class="cb">
+                    <input type="checkbox" id="garbage" />
+                    Мусор
+                </label>
+                <label class="cb">
+                    <input type="checkbox" id="rowdy" />
+                    Дебош
+                </label>
+                <label class="cb">
+                    <input type="checkbox" id="animal" />
+                    Животное
+                </label>
+
+                <label class="cb">
+                    <input type="checkbox" id="wallDamage" />
+                    Повреждение стен
+                </label>
+                <label class="cb">
+                    <input type="checkbox" id="sublease" />
+                    Субаренда
+                </label>
+                <label class="cb">
+                    <input type="checkbox" id="lostKeys" />
+                    Потеря ключей
+                </label>
+
+                <label class="cb">
+                    <input type="checkbox" id="accessBlock" />
+                    Блокировка доступа
+                </label>
+                <label class="cb">
+                    <input type="checkbox" id="neglectCheckout" />
+                    Халатный выезд
+                </label>
+            </div>
+
+            <div class="notice" id="notice" aria-live="polite" role="status" hidden></div>
+
+            <label for="totalPayout">Сумма к выплате</label>
+            <div id="totalPayout" class="result">0</div>
+
+            <div class="buttons">
+                <button id="resetBtn" type="button">Сброс</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="calculator.js"></script>
+</body>
+
+</html>
